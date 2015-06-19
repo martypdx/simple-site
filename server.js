@@ -2,6 +2,10 @@ var express = require('express');
 var app = express();
 var cool = require('cool-ascii-faces');
 var port = process.env.PORT || 3000;
+var path = require('path');
+var staticPath = path.join(__dirname, 'public');
+
+app.use( express.static(staticPath) );
 
 app.get('/', function(request, response){
 	response.send('hellllllo worldie do!');
